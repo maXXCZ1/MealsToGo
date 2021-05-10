@@ -8,51 +8,82 @@
  * @format
  */
 
-import React, {useState} from 'react';
-import {SafeAreaView, StatusBar, StyleSheet, Text, View} from 'react-native';
-import {Searchbar} from 'react-native-paper';
+//TODO Failed to load fonts via expo fonts, sticking to basic for now
+
+import React from 'react';
+import {SafeAreaView, Text} from 'react-native';
+
+// const Tab = createBottomTabNavigator();
+//
+// const SettingsScreen = () => {
+//   return (
+//     <SafeArea>
+//       <Text>Settings!</Text>
+//     </SafeArea>
+//   );
+// };
+// const HomeScreen = () => {
+//   return (
+//     <SafeArea>
+//       <RestaurantScreen />
+//     </SafeArea>
+//   );
+// };
+//
+// const MapScreen = () => {
+//   return (
+//     <SafeArea>
+//       <Text>Map!</Text>
+//     </SafeArea>
+//   );
+// };
 
 const App = () => {
-  const [searchQuery, setSearch] = useState('');
-
-  const onChangeSearch = (search: any) => {
-    setSearch(search);
-  };
-
   return (
-    <>
-      <StatusBar backgroundColor={'white'} barStyle={'dark-content'} />
-      <SafeAreaView style={styles.container}>
-        <View style={styles.searchContainer}>
-          <Searchbar
-            placeholder="Search"
-            onChangeText={onChangeSearch}
-            value={searchQuery}
-          />
-        </View>
-        <View style={styles.listContainer}>
-          <Text style={styles.text}>list</Text>
-        </View>
-      </SafeAreaView>
-    </>
+    <SafeAreaView style={{paddingTop: 32}}>
+      {/*<ThemeProvider theme={theme}>*/}
+      {/*<NavigationContainer>*/}
+      {/*  <Tab.Navigator*/}
+      {/*    screenOptions={({route}) => ({*/}
+      {/*      tabBarIcon: ({color, size}) => {*/}
+      {/*        let iconName;*/}
+
+      {/*        if (route.name === 'Restaurants') {*/}
+      {/*          iconName = 'md-restaurant';*/}
+      {/*        } else if (route.name === 'Settings') {*/}
+      {/*          iconName = 'md-settings';*/}
+      {/*        } else if (route.name === 'Map') {*/}
+      {/*          iconName = 'md-map';*/}
+      {/*        }*/}
+
+      {/*        // You can return any component that you like here!*/}
+      {/*        return <Ionicons name={iconName} size={size} color={color} />;*/}
+      {/*      },*/}
+      {/*    })}*/}
+      {/*    tabBarOptions={{*/}
+      {/*      activeTintColor: 'tomato',*/}
+      {/*      inactiveTintColor: 'gray',*/}
+      {/*    }}>*/}
+      {/*    <Tab.Screen name="Restaurants" component={RestaurantScreen} />*/}
+      {/*    <Tab.Screen name="Map" component={MapScreen} />*/}
+      {/*    <Tab.Screen name="Settings" component={SettingsScreen} />*/}
+      {/*  </Tab.Navigator>*/}
+      {/*</NavigationContainer>*/}
+      <Text>Text</Text>
+      <Text>Text</Text>
+      <Text>Text</Text>
+      <Text>Text</Text>
+      <Text>Text</Text>
+      <Text>Text</Text>
+      <Text>Text</Text>
+      <Text>Text</Text>
+      <Text>Text</Text>
+      <Text>Text</Text>
+
+      {/*</ThemeProvider>*/}
+      {/*<StatusBar backgroundColor={'white'} barStyle={'dark-content'} />*/}
+    </SafeAreaView>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-  searchContainer: {
-    padding: 16,
-  },
-  listContainer: {
-    flex: 1,
-    padding: 16,
-    backgroundColor: 'blue',
-  },
-  text: {
-    color: 'white',
-  },
-});
 
 export default App;
