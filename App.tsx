@@ -10,80 +10,49 @@
 
 //TODO Failed to load fonts via expo fonts, sticking to basic for now
 
+import 'react-native-gesture-handler';
 import React from 'react';
 import {SafeAreaView, Text} from 'react-native';
+import {ThemeProvider} from  'styled-components';
+import {NavigationContainer} from "@react-navigation/native";
+import RestaurantScreen from "./src/features/restaurants/screens/restaurants.screen";
+import {createBottomTabNavigator} from "@react-navigation/bottom-tabs";
+import {SafeArea} from './src/features/restaurants/components/utility/safe.area.component';
+import {theme} from "./src/infrastructure/Theme";
 
-// const Tab = createBottomTabNavigator();
-//
-// const SettingsScreen = () => {
-//   return (
-//     <SafeArea>
-//       <Text>Settings!</Text>
-//     </SafeArea>
-//   );
-// };
-// const HomeScreen = () => {
-//   return (
-//     <SafeArea>
-//       <RestaurantScreen />
-//     </SafeArea>
-//   );
-// };
-//
-// const MapScreen = () => {
-//   return (
-//     <SafeArea>
-//       <Text>Map!</Text>
-//     </SafeArea>
-//   );
-// };
+const Tab = createBottomTabNavigator();
+
+const SettingsScreen = () => {
+    return (
+        <SafeArea>
+            <Text>Settings!</Text>
+        </SafeArea>
+    );
+};
+
+
+const MapScreen = () => {
+    return (
+        <SafeArea>
+            <Text>Map!</Text>
+        </SafeArea>
+    );
+};
 
 const App = () => {
-  return (
-    <SafeAreaView style={{paddingTop: 32}}>
-      {/*<ThemeProvider theme={theme}>*/}
-      {/*<NavigationContainer>*/}
-      {/*  <Tab.Navigator*/}
-      {/*    screenOptions={({route}) => ({*/}
-      {/*      tabBarIcon: ({color, size}) => {*/}
-      {/*        let iconName;*/}
+    return (
 
-      {/*        if (route.name === 'Restaurants') {*/}
-      {/*          iconName = 'md-restaurant';*/}
-      {/*        } else if (route.name === 'Settings') {*/}
-      {/*          iconName = 'md-settings';*/}
-      {/*        } else if (route.name === 'Map') {*/}
-      {/*          iconName = 'md-map';*/}
-      {/*        }*/}
+        <ThemeProvider theme={theme}>
+            <NavigationContainer>
+                <Tab.Navigator>
+                    <Tab.Screen name="Restaurants" component={RestaurantScreen}/>
+                    <Tab.Screen name="Map" component={MapScreen}/>
+                    <Tab.Screen name="Settings" component={SettingsScreen}/>
+                </Tab.Navigator>
+            </NavigationContainer>
 
-      {/*        // You can return any component that you like here!*/}
-      {/*        return <Ionicons name={iconName} size={size} color={color} />;*/}
-      {/*      },*/}
-      {/*    })}*/}
-      {/*    tabBarOptions={{*/}
-      {/*      activeTintColor: 'tomato',*/}
-      {/*      inactiveTintColor: 'gray',*/}
-      {/*    }}>*/}
-      {/*    <Tab.Screen name="Restaurants" component={RestaurantScreen} />*/}
-      {/*    <Tab.Screen name="Map" component={MapScreen} />*/}
-      {/*    <Tab.Screen name="Settings" component={SettingsScreen} />*/}
-      {/*  </Tab.Navigator>*/}
-      {/*</NavigationContainer>*/}
-      <Text>Text</Text>
-      <Text>Text</Text>
-      <Text>Text</Text>
-      <Text>Text</Text>
-      <Text>Text</Text>
-      <Text>Text</Text>
-      <Text>Text</Text>
-      <Text>Text</Text>
-      <Text>Text</Text>
-      <Text>Text</Text>
-
-      {/*</ThemeProvider>*/}
-      {/*<StatusBar backgroundColor={'white'} barStyle={'dark-content'} />*/}
-    </SafeAreaView>
-  );
+        </ThemeProvider>
+    );
 };
 
 export default App;
