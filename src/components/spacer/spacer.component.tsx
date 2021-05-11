@@ -1,6 +1,6 @@
 import React from 'react';
 import styled, {useTheme} from 'styled-components';
-import {Animated, View} from "react-native";
+import {View} from "react-native";
 
 
 
@@ -43,7 +43,6 @@ const SpacerView = styled(View)`
 export const Spacer = ({position, size, children}: any) => {
     const theme = useTheme();
     const variant = getVariant(position, size, theme);
-    console.log(`passed to SpacerView is: ${variant}`);
     return <SpacerView variant={variant}>{children}</SpacerView>;
 };
 
