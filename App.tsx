@@ -26,7 +26,7 @@ import {RestaurantsContextProvider} from "./src/services/restaurants/restaurants
 const SettingsScreen = () => {
     return (
         <SafeArea>
-            <Text>B</Text>
+            <Text>A</Text>
         </SafeArea>
     );
 };
