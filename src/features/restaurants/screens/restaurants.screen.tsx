@@ -1,5 +1,5 @@
 import React, {useContext} from 'react';
-import {FlatList, View} from 'react-native';
+import {FlatList, View, Pressable, TouchableOpacity} from 'react-native';
 import {ActivityIndicator} from 'react-native-paper';
 import RestaurantInfoCard from '../components/restaurants-info-card.component';
 import styled from 'styled-components';
@@ -21,7 +21,7 @@ const LoadingContainer = styled(View)`
   left: 50%;
 `;
 
-const RestaurantScreen = () => {
+const RestaurantScreen = ( {navigation}) => {
     const {isLoading, error, restaurants}: any = useContext(RestaurantsContext);
     return (
         <SafeArea>
@@ -39,9 +39,13 @@ const RestaurantScreen = () => {
                 data={restaurants}
                 renderItem={({item}) => {
                     return (
+                        <TouchableOpacity delayPressIn={0} onPress={() => navigation.navigate('RestaurantDetail', {
+                            restaurant: item
+                        })}>
                         <Spacer position="bottom" size="large">
                             <RestaurantInfoCard restaurant={item}/>
                         </Spacer>
+                        </TouchableOpacity>
                     );
                 }}
                 keyExtractor={(item: any) => item.name}
