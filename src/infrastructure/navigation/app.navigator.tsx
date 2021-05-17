@@ -5,19 +5,12 @@ import {SafeArea} from "../../features/restaurants/components/utility/safe.area.
 import Ionicons from "react-native-vector-icons/Ionicons";
 import {createBottomTabNavigator} from "@react-navigation/bottom-tabs";
 import RestaurantNavigator from "./restaurant.navigator";
+import Map from "../../features/map/screens/map";
 
 const SettingsScreen = () => {
     return (
         <SafeArea>
             <Text>Settings! </Text>
-        </SafeArea>
-    );
-};
-
-const MapScreen = () => {
-    return (
-        <SafeArea>
-            <Text>Map! </Text>
         </SafeArea>
     );
 };
@@ -51,7 +44,7 @@ const AppNavigation = () => {
                 }}
             >
                 <Tab.Screen name="Restaurants" component={RestaurantNavigator}/>
-                <Tab.Screen name="Map" component={MapScreen}/>
+                <Tab.Screen name="Map" component={Map}/>
                 <Tab.Screen name="Settings" component={SettingsScreen}/>
             </Tab.Navigator>
         </NavigationContainer>
