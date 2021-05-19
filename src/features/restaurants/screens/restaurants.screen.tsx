@@ -5,6 +5,7 @@ import RestaurantInfoCard from '../components/restaurants-info-card.component';
 import styled from 'styled-components';
 import {SafeArea} from '../components/utility/safe.area.component';
 import {RestaurantsContext} from "../../../services/restaurants/restaurants.context";
+import {FavouritesContext} from "../../../services/favourites/favourites.context";
 import {Spacer} from "../../../components/spacer/spacer.component";
 import {Search} from '../components/search.component';
 
@@ -22,7 +23,9 @@ const LoadingContainer = styled(View)`
 `;
 
 const RestaurantScreen = ( {navigation}) => {
-    const {isLoading, error, restaurants}: any = useContext(RestaurantsContext);
+    const {isLoading, restaurants}: any = useContext(RestaurantsContext);
+    // const {favourites}: any = useContext(FavouritesContext); //TODO add FavouritesContext
+
     return (
         <SafeArea>
             {isLoading && (

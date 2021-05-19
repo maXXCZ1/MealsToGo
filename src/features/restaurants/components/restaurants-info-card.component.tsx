@@ -15,6 +15,7 @@ import {
     TextTempClosed,
     Title,
 } from './restaurant.info.card.styles';
+import {Favourite} from "../../../components/favourites/favourite.component";
 
 const RestaurantInfoCard = ({restaurant = {}}: any) => {
     const {
@@ -34,6 +35,7 @@ const RestaurantInfoCard = ({restaurant = {}}: any) => {
 
     return (
         <RestaurantCard>
+
             <RestaurantCardCover
                 key={name}
                 source={{
