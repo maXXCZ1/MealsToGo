@@ -36,7 +36,7 @@ const RestaurantInfoCard = ({restaurant = {}}: any) => {
     return (
         <RestaurantCard>
             <View>
-            <Favourite/>
+            <Favourite restaurant={restaurant}/>
             <RestaurantCardCover
                 key={name}
                 source={{

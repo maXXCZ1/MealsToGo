@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from "styled-components/native";
-import {View, Text, Platform} from 'react-native';
+import {Platform, Text} from 'react-native';
 import WebView from "react-native-webview";
 
 
@@ -24,14 +24,14 @@ const Item = styled.View`
 
 const isAndroid = Platform.OS === "android";
 
-const CompactRestaurantInfo = ({restaurant}: any) => {
-    const Image = isAndroid ? CompactWebview : CompactImage;
-  return (
-      <Item>
-          <Image source={{uri: restaurant.photos[0]}}/>
-          <Text>{restaurant.name}</Text>
-      </Item>
-  );
+const CompactRestaurantInfo = ({restaurant, isMap}: any) => {
+    const Image = isAndroid && isMap? CompactWebview : CompactImage;
+    return (
+        <Item>
+            <Image source={{uri: restaurant.photos[0]}}/>
+            <Text>{restaurant.name}</Text>
+        </Item>
+    );
 };
 
 export default CompactRestaurantInfo;

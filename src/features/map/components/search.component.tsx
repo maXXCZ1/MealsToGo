@@ -19,12 +19,6 @@ export const Search = () => {
         setSearchKeyword(keyword)
     }, [keyword]);
 
-
-//TODO removed in ep. 165
-    // useEffect(() => {
-    //  search(searchKeyword)
-    // }, []);
-
     return (
         <SearchContainer>
             <Searchbar

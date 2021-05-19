@@ -11,12 +11,14 @@ const FavouriteButton = styled(TouchableOpacity)`
   z-index: 9;
 `;
 
-export const Favourite = () => {
-    const {favourites, addtoFavourites, removeFromFavourites} = useContext(FavouritesContext);
+export const Favourite = ({restaurant}) => {
+    const {favourites, addToFavourites, removeFromFavourites} = useContext(FavouritesContext);
+
+    const isFavourite = favourites.find((r) => r.placeId === restaurant.placeId);
 
     return (
-        <FavouriteButton>
-            <Ionicons name='heart' size={24} color={'red'}/>
+        <FavouriteButton onPress={() => !isFavourite? addToFavourites(restaurant) : removeFromFavourites(restaurant)}>
+            <Ionicons name={isFavourite ? 'heart': 'heart-outline'} size={24} color={isFavourite? 'red' : 'white'}/>
         </FavouriteButton>
     );
 }

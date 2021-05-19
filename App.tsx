@@ -17,8 +17,7 @@ import {theme} from "./src/infrastructure/Theme";
 import {RestaurantsContextProvider} from "./src/services/restaurants/restaurants.context";
 import {LocationContextProvider} from "./src/services/location/location.context";
 import Navigation from "./src/infrastructure/navigation";
-import FavouritesContextProvider from "./src/services/favourites/favourites.context"; //TODO Implement FavouritesContext
-
+import FavouritesContextProvider from "./src/services/favourites/favourites.context";
 const App = () => {
     return (
         <>
