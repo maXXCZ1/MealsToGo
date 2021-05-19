@@ -1,5 +1,5 @@
 import React from 'react';
-import {Image} from 'react-native';
+import {Image, View} from 'react-native';
 import {SvgXml} from 'react-native-svg';
 import star from '../../../../assets/star';
 import open from '../../../../assets/open';
@@ -35,13 +35,15 @@ const RestaurantInfoCard = ({restaurant = {}}: any) => {
 
     return (
         <RestaurantCard>
-
+            <View>
+            <Favourite/>
             <RestaurantCardCover
                 key={name}
                 source={{
                     uri: photos[0],
                 }}
             />
+            </View>
             <Info>
                 <Title>{name}</Title>
                 <RestaurantInfo>

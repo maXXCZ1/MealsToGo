@@ -21,15 +21,17 @@ import FavouritesContextProvider from "./src/services/favourites/favourites.cont
 
 const App = () => {
     return (
+        <>
         <ThemeProvider theme={theme}>
-            {/*<FavouritesContextProvider>*/}
+            <FavouritesContextProvider>
                 <LocationContextProvider>
                     <RestaurantsContextProvider>
                         <Navigation/>
                     </RestaurantsContextProvider>
                 </LocationContextProvider>
-            {/*</FavouritesContextProvider>*/}
+            </FavouritesContextProvider>
         </ThemeProvider>
+        </>
     );
 };
 

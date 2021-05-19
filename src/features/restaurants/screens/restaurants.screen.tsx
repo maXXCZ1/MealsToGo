@@ -1,11 +1,10 @@
 import React, {useContext} from 'react';
-import {FlatList, View, Pressable, TouchableOpacity} from 'react-native';
+import {FlatList, TouchableOpacity, View} from 'react-native';
 import {ActivityIndicator} from 'react-native-paper';
 import RestaurantInfoCard from '../components/restaurants-info-card.component';
 import styled from 'styled-components';
 import {SafeArea} from '../components/utility/safe.area.component';
 import {RestaurantsContext} from "../../../services/restaurants/restaurants.context";
-import {FavouritesContext} from "../../../services/favourites/favourites.context";
 import {Spacer} from "../../../components/spacer/spacer.component";
 import {Search} from '../components/search.component';
 
@@ -22,9 +21,9 @@ const LoadingContainer = styled(View)`
   left: 50%;
 `;
 
-const RestaurantScreen = ( {navigation}) => {
+const RestaurantScreen = ({navigation}) => {
     const {isLoading, restaurants}: any = useContext(RestaurantsContext);
-    // const {favourites}: any = useContext(FavouritesContext); //TODO add FavouritesContext
+    // const {favourites}: any = useContext(FavouritesContext);
 
     return (
         <SafeArea>
@@ -45,9 +44,9 @@ const RestaurantScreen = ( {navigation}) => {
                         <TouchableOpacity delayPressIn={0} onPress={() => navigation.navigate('RestaurantDetail', {
                             restaurant: item
                         })}>
-                        <Spacer position="bottom" size="large">
-                            <RestaurantInfoCard restaurant={item}/>
-                        </Spacer>
+                            <Spacer position="bottom" size="large">
+                                <RestaurantInfoCard restaurant={item}/>
+                            </Spacer>
                         </TouchableOpacity>
                     );
                 }}
