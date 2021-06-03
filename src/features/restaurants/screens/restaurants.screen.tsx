@@ -65,6 +65,7 @@ const RestaurantScreen = ({navigation}) => {
             />
         </SafeArea>
     );
+
 };
 
 export default RestaurantScreen;

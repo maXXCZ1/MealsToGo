@@ -8,7 +8,7 @@
  * @format
  */
 
-//TODO Failed to load fonts via expo fonts, sticking to basic for now
+//TODO Failed to load fonts via expo fonts, sticking to basics for now
 
 import 'react-native-gesture-handler';
 import React from 'react';
